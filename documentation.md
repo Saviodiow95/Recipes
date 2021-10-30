@@ -13,7 +13,7 @@ Recipes API is a service the cookbook
   Content-Type: application/json
   Accept: application/json
 ```
-###Attributes for creating the chef
+Attributes for creating the chef
 | Attribute | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
 | `name`      | `string` | **Required**. Name of chef |
@@ -47,7 +47,7 @@ Recipes API is a service the cookbook
   Accept: application/json
 ```
 
-###Attributes the chef
+Attributes the chef
 | Attribute | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
 | `id`      | `primary_ky` | **Required**. Id of chef |
@@ -76,7 +76,7 @@ Recipes API is a service the cookbook
   Content-Type: application/json
   Accept: application/json
 ```
-###Attributes the chef
+Attributes the chef
 | Attribute | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
 | `id`      | `primary_ky` | **Required**. Id of chef |
@@ -91,10 +91,11 @@ Recipes API is a service the cookbook
        
        
        
-        {
-            "id": 1,
-            "name": "Sávio Silva"
-        }
+          {
+               "id": 1,
+               "name": "Sávio Silva"
+          }
+
 
 ## Update Chef 
 ```http
@@ -103,7 +104,7 @@ Recipes API is a service the cookbook
   Content-Type: application/json
   Accept: application/json
 ```
-###Attributes the chef
+Attributes the chef
 | Attribute | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
 | `id`      | `primary_ky` | **Required**. Id of chef |
@@ -118,14 +119,16 @@ Recipes API is a service the cookbook
   
   
 
-        {
-            "name": "Savio Silva Moreira"
-        }
+          {
+              "name": "Savio Silva Moreira"
+          }
      
     
 + Response 200 OK (application/json)
     
     + Body
+
+
 
           {
               "id": 1,
@@ -159,7 +162,7 @@ Recipes API is a service the cookbook
   Content-Type: application/json
   Accept: application/json
 ```
-###Attributes for creating the recipe
+Attributes for creating the recipe
 | Attribute | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
 | `name`      | `string` | **Required** Name of the recipe. |
@@ -216,7 +219,7 @@ Recipes API is a service the cookbook
   Content-Type: application/json
   Accept: application/json
 ```
-###Attributes the recipe
+Attributes the recipe
 | Attribute | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
 | `id`      | `primary_ky` | **Required**. Id of recipe |
@@ -241,17 +244,17 @@ Recipes API is a service the cookbook
     
     
 
-        {
-                'id': 1,
-                'name': "Empadão de frango",
-                "chef": 2,
-                "description": "",
-                "ingredients": "1 colher (sopa) bem cheia de fermento para pão (eu usei fermento granulado ...",
-                "time": 90,
-                "difficulty": "2",
-                "method": "Em ma tigela grande e larga colocar o fermento em pó, o açúcar e despejar a água morna ...",
-                "portions": 30
-        }
+          {
+                  'id': 1,
+                  'name': "Empadão de frango",
+                  "chef": 2,
+                  "description": "",
+                  "ingredients": "1 colher (sopa) bem cheia de fermento para pão (eu usei fermento granulado ...",
+                  "time": 90,
+                  "difficulty": "2",
+                  "method": "Em ma tigela grande e larga colocar o fermento em pó, o açúcar e despejar a água morna ...",
+                  "portions": 30
+          }
 
 
 ## Update Recipe 
@@ -261,7 +264,7 @@ Recipes API is a service the cookbook
   Content-Type: application/json
   Accept: application/json
 ```
-###Attributes the recipe
+Attributes the recipe
 | Attribute | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
 | `id`      | `primary_ky` | **Required**. Id of recipe |
@@ -284,16 +287,16 @@ Recipes API is a service the cookbook
     
 
 
-        {
-            'name': "Empadão d",
-            "chef": 1,
-            "description": "",
-            "ingredients": "1 colher (sopa) bem cheia de fermento para pão (eu usei fermento granulado ...",
-            "time": 90,
-            "difficulty": "2",
-            "method": "Em ma tigela pequena e larga colocar o fermento em pó, o açúcar e despejar a água morna ...",
-            "portions": 30
-        }
+          {
+              'name': "Empadão d",
+              "chef": 1,
+              "description": "",
+              "ingredients": "1 colher (sopa) bem cheia de fermento para pão (eu usei fermento granulado ...",
+              "time": 90,
+              "difficulty": "2",
+              "method": "Em ma tigela pequena e larga colocar o fermento em pó, o açúcar e despejar a água morna ...",
+              "portions": 30
+         }
      
     
 + Response 200 OK (application/json)
@@ -335,7 +338,7 @@ Recipes API is a service the cookbook
   Content-Type: application/json
   Accept: application/json
 ```
-###Attributes the chef
+Attributes the chef
 | Attribute | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
 | `id`      | `primary_ky` | **Required**. Id of recipe |
