@@ -13,7 +13,7 @@ Recipes API is a service the cookbook
   Content-Type: application/json
   Accept: application/json
 ```
-####Attributes for creating the chef
+###Attributes for creating the chef
 | Attribute | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
 | `name`      | `string` | **Required**. Name of chef |
@@ -47,7 +47,7 @@ Recipes API is a service the cookbook
   Accept: application/json
 ```
 
-####Attributes the chef
+###Attributes the chef
 | Attribute | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
 | `id`      | `primary_ky` | **Required**. Id of chef |
@@ -76,7 +76,7 @@ Recipes API is a service the cookbook
   Content-Type: application/json
   Accept: application/json
 ```
-####Attributes the chef
+###Attributes the chef
 | Attribute | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
 | `id`      | `primary_ky` | **Required**. Id of chef |
@@ -88,6 +88,7 @@ Recipes API is a service the cookbook
 + Response 200 OK (application/json)
 
     + Body
+       
        
        
         {
@@ -102,7 +103,7 @@ Recipes API is a service the cookbook
   Content-Type: application/json
   Accept: application/json
 ```
-####Attributes the chef
+###Attributes the chef
 | Attribute | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
 | `id`      | `primary_ky` | **Required**. Id of chef |
@@ -114,6 +115,7 @@ Recipes API is a service the cookbook
 + Request
 
     + Body
+  
   
 
         {
@@ -157,7 +159,7 @@ Recipes API is a service the cookbook
   Content-Type: application/json
   Accept: application/json
 ```
-####Attributes for creating the recipe
+###Attributes for creating the recipe
 | Attribute | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
 | `name`      | `string` | **Required** Name of the recipe. |
@@ -214,7 +216,7 @@ Recipes API is a service the cookbook
   Content-Type: application/json
   Accept: application/json
 ```
-####Attributes the recipe
+###Attributes the recipe
 | Attribute | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
 | `id`      | `primary_ky` | **Required**. Id of recipe |
@@ -237,6 +239,7 @@ Recipes API is a service the cookbook
 
     + Body
     
+    
 
         {
                 'id': 1,
@@ -258,7 +261,7 @@ Recipes API is a service the cookbook
   Content-Type: application/json
   Accept: application/json
 ```
-####Attributes the recipe
+###Attributes the recipe
 | Attribute | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
 | `id`      | `primary_ky` | **Required**. Id of recipe |
@@ -279,6 +282,7 @@ Recipes API is a service the cookbook
 
     + Body
     
+
 
         {
             'name': "Empadão d",
@@ -331,7 +335,7 @@ Recipes API is a service the cookbook
   Content-Type: application/json
   Accept: application/json
 ```
-####Attributes the chef
+###Attributes the chef
 | Attribute | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
 | `id`      | `primary_ky` | **Required**. Id of recipe |
