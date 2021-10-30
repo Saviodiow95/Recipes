@@ -46,9 +46,9 @@ class ChefTest(TestCase):
             portions=6
         )
 
-    def test_create(self):
+    def test_should_create_recipe_with_arguments_valid(self):
         """
-        Testing creation of a Recipe with valid and invalid data, using the view CreateRecipe
+        Testing creation of a Recipe with valid data, using the view CreateRecipe
         """
         chef_valid = {
             "name": "Esfirra de frango",
@@ -60,6 +60,19 @@ class ChefTest(TestCase):
             "method": "Em ma tigela grande e larga colocar o fermento em pó, o açúcar e despejar a água morna ...",
             "portions": 30
         }
+
+        response_valid = self.client.post(
+            reverse('create-recipe'),
+            data=json.dumps(chef_valid),
+            content_type='application/json'
+        )
+
+        self.assertEqual(response_valid.status_code, status.HTTP_201_CREATED)
+
+    def test_should_create_recipe_with_arguments_invalid(self):
+        """
+        Testing creation of a Recipe with invalid data, using the view CreateRecipe
+        """
         recipe_invalid = {
             "name": "",
             "chef": 1,
@@ -71,21 +84,15 @@ class ChefTest(TestCase):
             "portions": 6
         }
 
-        response_valid = self.client.post(
-            reverse('create-recipe'),
-            data=json.dumps(chef_valid),
-            content_type='application/json'
-        )
         response_invalid = self.client.post(
             reverse('create-recipe'),
             data=json.dumps(recipe_invalid),
             content_type='application/json'
         )
 
-        self.assertEqual(response_valid.status_code, status.HTTP_201_CREATED)
         self.assertEqual(response_invalid.status_code, status.HTTP_400_BAD_REQUEST)
 
-    def test_detail_get(self):
+    def test_should_get_recipe_by_id(self):
         """
         Testing the method get in view DetailRecipe
         """
@@ -96,14 +103,14 @@ class ChefTest(TestCase):
         self.assertEqual(response.data, recipe_serializer.data)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
-    def test_detail_delete(self):
+    def test_should_delete_recipe_by_id(self):
         """
         Testing the method delete in view DetailRecipe
         """
         response = self.client.delete(reverse('detail-recipe', kwargs={'pk': 2}))
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
 
-    def test_detail_put(self):
+    def test_should_update_recipe_with_arguments_valid(self):
         """
         Testing the method put in view DetailRecipe
         """
@@ -124,7 +131,28 @@ class ChefTest(TestCase):
         )
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
-    def test_search(self):
+    def test_should_update_recipe_with_arguments_invalid(self):
+        """
+        Testing the method put in view DetailRecipe
+        """
+        recipe_json = {
+            'name': "",
+            "chef": 2,
+            "description": "",
+            "ingredients": "1 colher (sopa) bem cheia de fermento para pão (eu usei fermento granulado ...",
+            "time": 90,
+            "difficulty": "",
+            "method": "Em ma tigela grande e larga colocar o fermento em pó, o açúcar e despejar a água morna ...",
+            "portions": 30
+        }
+        response = self.client.put(
+            reverse('detail-recipe', kwargs={'pk': 1}),
+            data=json.dumps(recipe_json),
+            content_type='application/json'
+        )
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+
+    def test_should_get_list_of_recipe(self):
         """
         Testing the return da view  SearchRecipe
         """
@@ -133,7 +161,7 @@ class ChefTest(TestCase):
         response = self.client.get(reverse('search-Recipe'))
         self.assertEqual(response.data, recipe_serializer.data)
 
-    def test_search_name(self):
+    def test_should_get_list_of_recipe_with_filter_by_name(self):
         """
         Testing the return da view  SearchRecipe using param name
         """
@@ -142,7 +170,7 @@ class ChefTest(TestCase):
         response = self.client.get(reverse('search-Recipe'), {'name': 'frango'})
         self.assertEqual(response.data, recipe_serializer.data)
 
-    def test_search_chef(self):
+    def test_should_get_list_of_recipe_with_filter_by_chef(self):
         """
         Testing the return da view  SearchRecipe using param chef
         """
@@ -151,7 +179,7 @@ class ChefTest(TestCase):
         response = self.client.get(reverse('search-Recipe'), {'chef': 1})
         self.assertEqual(response.data, recipe_serializer.data)
 
-    def test_search_name_time(self):
+    def test_should_get_list_of_recipe_with_filter_by_name_and_time(self):
         """
         Testing the return da view  SearchRecipe using params name and time
         """
